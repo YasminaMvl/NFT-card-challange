@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Outfit";
+    src: url('fonts/Outfit-Light.ttf') format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url('fonts/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url('fonts/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+:root{
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+*{margin:0;}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body{
+    background-color: var(--very-dark-blue-main);
+    font-family: "Outfit";
+}
+
+main{display: flex;justify-content: center;align-items: center;min-height: 100vh;}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    color:var(--white);
+    text-decoration: none;
+}
+
+footer{
+    border-top: 1px solid var(--very-dark-blue-line);
+    display: flex;
+    align-items: center;
+    padding-block-start: 1em;
+}
+
+.card{
+    background-color: var(--very-dark-blue-card);
+    border-radius: 1em;
+    max-width: 360px;
+    padding: 1.5em;
+    color: var(--soft-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: fit-content;
+}
+
+.preview{
+    order:-1;
+    position: relative;
+}
+
+.preview:hover .overlay{
+    opacity: .5;
+}
+
+.overlay{background-color: var(--cyan);}
+
+.overlay, .overlay-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5em;
+  }
+
+  .preview:hover .overlay-icon{
+    opacity: 1;
+  }
+
+.preview img{border-radius: .5em}
+
+
+.avatar{
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    max-width: 2em;
+    margin-inline-end: 1em;
+}
+
+.value{color:var(--cyan);}
+
+.stats, .stats div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats div{
+    gap: 1ch;
+}
+
+a:hover{color: var(--cyan);}
